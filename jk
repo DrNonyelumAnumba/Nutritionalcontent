@@ -1,0 +1,27 @@
+----TO CALL OUT THE NUTRITION TABLE
+
+SELECT * FROM NutritionalFacts_Fruit_Vegetables_Seafood1
+
+----TO KNOW THE NUMBER OF FOOD UNDER REVIEW
+
+SELECT COUNT (Food) FROM NutritionalFacts_Fruit_Vegetables_Seafood1
+AS Total_Food
+
+----TO SEE THE NUMBER OF FOODS THAT CONTAIN FAT AND THEIR FOOD TYPES
+
+SELECT Food, Food_Type, Total_Fat FROM NutritionalFacts_Fruit_Vegetables_Seafood1
+AS Fatty_Food
+WHERE Total_Fat > 0
+ORDER BY Total_Fat DESC
+
+-----TO SEE THE FOOD WITH HIGH Vitamin_A content
+
+SELECT Food, COUNT(Vitamin_C), MAX(Vitamin_C) 
+AS High_Vitamin_C FROM NutritionalFacts_Fruit_Vegetables_Seafood1
+WHERE Vitamin_C > 100
+GROUP BY Food 
+ORDER BY Food
+
+----WHICH FOODS CONTAIN CALCUIM AND PROTEIN
+SELECT Food, Calcium, Protein FROM NutritionalFacts_Fruit_Vegetables_Seafood1
+WHERE
